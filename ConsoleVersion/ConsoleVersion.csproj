@@ -46,14 +46,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="bin\Debug\ConsoleVersion.exe.config" />
-    <None Include="bin\Debug\ConsoleVersion.vshost.exe.config" />
-    <None Include="bin\Debug\ConsoleVersion.vshost.exe.manifest" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\ConsoleVersion.exe" />
-    <Content Include="bin\Debug\ConsoleVersion.pdb" />
-    <Content Include="bin\Debug\ConsoleVersion.vshost.exe" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PUtilsLibrary\WatcherLibrary.csproj">
