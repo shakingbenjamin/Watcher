@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("PUtilsLibrary")]
+[assembly: AssemblyTitle("WatcherLibrary")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("PUtilsLibrary")]
-[assembly: AssemblyCopyright("Copyright ©  2015")]
+[assembly: AssemblyProduct("WatcherLibrary")]
+[assembly: AssemblyCopyright("Copyright ©2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

@@ -49,7 +49,7 @@
             // notifyIcon1
             // 
             this.notifyIcon1.Icon = ((System.Drawing.Icon)(resources.GetObject("notifyIcon1.Icon")));
-            this.notifyIcon1.Text = "PUtils Icon";
+            this.notifyIcon1.Text = "Watcher Icon";
             this.notifyIcon1.DoubleClick += new System.EventHandler(this.Form1_Reveal);
             // 
             // CloseBtn
@@ -82,7 +82,7 @@
             this.Controls.Add(this.StartBtn);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "PUtils Form";
+            this.Text = "Watcher Form";
             this.ResumeLayout(false);
 
         }
