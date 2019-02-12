@@ -21,11 +21,11 @@ namespace WatcherLibrary
     {
         private string hostname;
         private string dateTimeStmp;
-        private static System.Timers.Timer ticker;
+        private static Timer ticker;
         public void GoTimeAppend()
         {
-            hostname = System.Environment.MachineName;
-            ticker = new System.Timers.Timer(10000);
+            hostname = Environment.MachineName;
+            ticker = new Timer(10000);
             dateTimeStmp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             var aw = new ActiveWindow();
             var jo = new Activity
@@ -38,23 +38,23 @@ namespace WatcherLibrary
             };
             aw.ToWebService(jo);
             ticker.Elapsed += new ElapsedEventHandler(aw.OnTimeAppend);
-            Microsoft.Win32.SystemEvents.SessionSwitch += new Microsoft.Win32.SessionSwitchEventHandler(aw.SystemEvents_SessionSwitchAppend);
+            SystemEvents.SessionSwitch += new SessionSwitchEventHandler(aw.SystemEvents_SessionSwitchAppend);
             ticker.Enabled = true;
             ticker.Interval = 2000;
         }
         public void GoTimeWeb()
         {
-            ticker = new System.Timers.Timer(10000);
+            ticker = new Timer(10000);
             var aw = new ActiveWindow();
             ticker.Elapsed += new ElapsedEventHandler(aw.OnTimeWeb);
-            Microsoft.Win32.SystemEvents.SessionSwitch += new Microsoft.Win32.SessionSwitchEventHandler(aw.SystemEvents_SessionSwitchWeb);
+            SystemEvents.SessionSwitch += new SessionSwitchEventHandler(aw.SystemEvents_SessionSwitchWeb);
             ticker.Enabled = true;
             ticker.Interval = 2000;
         }
         public void StopTime()
         {
             dateTimeStmp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-            hostname = System.Environment.MachineName;
+            hostname = Environment.MachineName;
             var jo = new Activity
             {
                 host = hostname,
@@ -153,7 +153,7 @@ namespace WatcherLibrary
             newTitle = GetActiveWindowTitle();
             appName = GetForegroundProcessName();
             newUser = System.Security.Principal.WindowsIdentity.GetCurrent().Name;
-            hostname = System.Environment.MachineName;
+            hostname = Environment.MachineName;
 
             if (newUser != existingUser)
             {
@@ -192,7 +192,7 @@ namespace WatcherLibrary
                 }   
             }
         }
-        public void SystemEvents_SessionSwitchWeb(object sender, Microsoft.Win32.SessionSwitchEventArgs e)
+        public void SystemEvents_SessionSwitchWeb(object sender, SessionSwitchEventArgs e)
         {
             dateTimeStmp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -222,7 +222,7 @@ namespace WatcherLibrary
                 ToWebService(jo);
             }
         }
-        public void SystemEvents_SessionSwitchAppend(object sender, Microsoft.Win32.SessionSwitchEventArgs e)
+        public void SystemEvents_SessionSwitchAppend(object sender, SessionSwitchEventArgs e)
         {
             dateTimeStmp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
@@ -270,7 +270,7 @@ namespace WatcherLibrary
         // The GetWindowThreadProcessId function retrieves the identifier of the thread
         // that created the specified window and, optionally, the identifier of the
         // process that created the window.
-        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        [DllImport("user32.dll")]
         private static extern Int32 GetWindowThreadProcessId(IntPtr hWnd, out uint lpdwProcessId);
         private string GetForegroundProcessName()
         {
@@ -284,7 +284,7 @@ namespace WatcherLibrary
             uint pid;
             GetWindowThreadProcessId(hwnd, out pid);
 
-            foreach (System.Diagnostics.Process p in System.Diagnostics.Process.GetProcesses())
+            foreach (Process p in Process.GetProcesses())
             {
                 if (p.Id == pid)
                     return p.ProcessName;
