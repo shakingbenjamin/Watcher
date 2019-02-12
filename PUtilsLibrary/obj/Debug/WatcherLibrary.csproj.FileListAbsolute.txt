@@ -1,0 +1,5 @@
+G:\Work\Home Projects\Work\Projects\PUtils\PUtilsLibrary\bin\Debug\PUtilsLibrary.dll
+G:\Work\Home Projects\Work\Projects\PUtils\PUtilsLibrary\bin\Debug\PUtilsLibrary.pdb
+G:\Work\Home Projects\Work\Projects\PUtils\PUtilsLibrary\obj\Debug\WatcherLibrary.csproj.CoreCompileInputs.cache
+G:\Work\Home Projects\Work\Projects\PUtils\PUtilsLibrary\obj\Debug\PUtilsLibrary.dll
+G:\Work\Home Projects\Work\Projects\PUtils\PUtilsLibrary\obj\Debug\PUtilsLibrary.pdb
